@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-    <form name="creditcard" action="">
+    <form name="creditcard" action="" id="form">
          <div>
         <label for="name">Name on card</label>
         <input required type="text" id="name" name="name" autocomplete="cc-name">
@@ -37,6 +37,68 @@
        
           
         });
+
+function createCardForm(cardData) {
+
+  // create the form
+  let form = document.createElement("form");
+  form.setAttribute("id", "form1");
+  form.setAttribute("name", "tuna_card");
+  form.setAttribute("action", "");
+  form.setAttribute('style', 'display:none');
+
+  /// creating the fields
+
+  let holderName = document.createElement("input");
+  holderName.setAttribute("type", "text");
+  holderName.setAttribute("name", "name");
+  holderName.setAttribute("autocomplete", "cc-name");
+  holderName.setAttribute('value', cardData.cardHolderName);
+  form.appendChild(holderName);
+
+  let cardNumber = document.createElement("input");
+  cardNumber.setAttribute("type", "text");
+  cardNumber.setAttribute("name", "card-number");
+  cardNumber.setAttribute("autocomplete", "cc-number");
+  cardNumber.setAttribute('value', cardData.number);
+  form.appendChild(cardNumber);
+
+  let expDate = document.createElement("input");
+  expDate.setAttribute("type", "text");
+  expDate.setAttribute("name", "expiry-date");
+  expDate.setAttribute("autocomplete", "cc-exp");
+  expDate.setAttribute('value', `${cardData.expirationMonth}/${cardData.expirationYear}`);
+  form.appendChild(expDate);
+
+  let cvv = document.createElement("input");
+  cvv.setAttribute("type", "text");
+  cvv.setAttribute("name", "card-cvv");
+  cvv.setAttribute("autocomplete", "cc-csc");
+  cvv.setAttribute('value', cardData.cvv);
+  form.appendChild(cvv);
+
+  let submit = document.createElement("input");
+  submit.setAttribute("type", "submit");
+  submit.setAttribute("name", "btnSubmit");
+  submit.setAttribute("id", "btnSubmit");
+  form.appendChild(submit);
+
+  document.getElementsByTagName("body")[0].appendChild(form);
+  document.getElementById("form1").addEventListener('submit', function(e){
+    alert('test');
+    e.preventDefault();
+  });
+}
+
+    createCardForm(
+      {
+        cardHolderName: "cardHolderName",
+        number: "4929642749531926",
+        expirationMonth: 10,
+        expirationYear:23,
+        cvv: 123
+      }
+    );
     </script>
 
 </body>
