@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <form name="creditcard" action="">
+         <div>
+        <label for="name">Name on card</label>
+        <input required type="text" id="name" name="name" autocomplete="cc-name">
+      </div>
+     <div class="card-number">
+        <label>Card number</label>
+       <input required type="text" id="card-number" name="card-number" inputmode="numeric" autcomplete="cc-number" pattern="[0-9]+">
+      </div>
+      <div class="date-code"><div>
+        <label for="expiry-date">Expiry date</label>
+       <input required type="text" id="expiry-date" name="expiry-date" class="expiry-date" autocomplete="cc-exp" placeholder="MM/YY" minlength="4" pattern="[0-9/]+">
+        </div>
+        <div>
+        <label for="security-code">Security code</label>
+          <input required type="text" id="security-code" name="security-code" inputmode="numeric" minlength="3" maxlength="4" pattern="[0-9]+"></div>
+      </div>
+      <input type="submit" name="submit" class="button" id="submit_btn" value="Send" />
+    </form>
+
+
+    <script>
+      $( "form" ).on( "submit", function(e) {
+       
+          var dataString = $(this).serialize();
+           e.preventDefault();
+           alert(dataString); return false;
+       
+          
+        });
+    </script>
+
+</body>
+</html>
