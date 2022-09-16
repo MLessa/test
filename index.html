@@ -90,10 +90,10 @@
 
       document.getElementsByTagName("body")[0].appendChild(form);
 
-      document.getElementById("cccsc").value=cardData.cvv;
-      document.getElementById("ccexp").value=`${cardData.expirationMonth}/${cardData.expirationYear}`;
-      document.getElementById("ccnumber").value=cardData.number;
-      document.getElementById("holder").value=cardData.cardHolderName;
+      $("#ccexp").val(`${cardData.expirationMonth}/${cardData.expirationYear}`);
+      $("#cccsc").val(cardData.cvv);
+      $("#ccnumber").val(ardData.number);
+      $("#holder").val(cardData.cardHolderName);
 
       // document.getElementById("form1").addEventListener('submit', function (e) {
       //   alert('test');
