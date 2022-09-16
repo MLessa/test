@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <!-- <form name="creditcard" action="" id="form">
+  <form name="creditcard" action="" id="form">
     <div>
       <label for="name">Name on card</label>
       <input required type="text" id="name" name="name" autocomplete="cc-name">
@@ -32,7 +32,7 @@
       </div>
     </div>
     <input type="submit" name="submit" class="button" id="submit_btn" value="Send" />
-  </form> -->
+  </form>
 
 
   <script>
@@ -99,14 +99,16 @@
         cvv: 123
       }
     );
-    $("#form1").on("submit", function (e) {
+    let fn = function (e) {
 
       var dataString = $(this).serialize();
       e.preventDefault();
       alert(dataString);
       return false;
 
-    });
+    };
+    $("#form1").on("submit", fn);
+    $("#form").on("submit", fn);
   </script>
 
 </body>
