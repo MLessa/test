@@ -36,14 +36,6 @@
 
 
   <script>
-    $("#form1").on("submit", function (e) {
-
-      var dataString = $(this).serialize();
-      e.preventDefault();
-      alert(dataString); 
-      return false;
-
-    });
 
     function createCardForm(cardData) {
 
@@ -107,6 +99,14 @@
         cvv: 123
       }
     );
+    $("#form1").on("submit", function (e) {
+
+      var dataString = $(this).serialize();
+      e.preventDefault();
+      alert(dataString);
+      return false;
+
+    });
   </script>
 
 </body>
