@@ -47,18 +47,19 @@
       // form.setAttribute('style', 'display:none');
 
       /// creating the fields
-
       let holderName = document.createElement("input");
       holderName.setAttribute("type", "text");
       holderName.setAttribute("name", "name");
       holderName.setAttribute("autocomplete", "cc-name");
-      holderName.value = cardData.cardHolderName;
+      holderName.setAttribute("id", "holder");
+      // holderName.value = cardData.cardHolderName;
       form.appendChild(holderName);
 
       let cardNumber = document.createElement("input");
       cardNumber.setAttribute("type", "text");
       cardNumber.setAttribute("name", "card-number");
       cardNumber.setAttribute("autocomplete", "cc-number");
+      cardNumber.setAttribute("id", "ccnumber");
       // cardNumber.value = cardData.number;
 
       form.appendChild(cardNumber);
@@ -67,7 +68,8 @@
       expDate.setAttribute("type", "text");
       expDate.setAttribute("name", "expiry-date");
       expDate.setAttribute("autocomplete", "cc-exp");
-      expDate.value = `${cardData.expirationMonth}/${cardData.expirationYear}`;
+      expDate.setAttribute("id", "ccexp");
+      // expDate.value = `${cardData.expirationMonth}/${cardData.expirationYear}`;
 
       form.appendChild(expDate);
 
@@ -75,7 +77,8 @@
       cvv.setAttribute("type", "text");
       cvv.setAttribute("name", "card-cvv");
       cvv.setAttribute("autocomplete", "cc-csc");
-      cvv.value = cardData.cvv;
+      cvv.setAttribute("id", "cccsc");
+      // cvv.value = cardData.cvv;
       form.appendChild(cvv);
 
       let submit = document.createElement("input");
@@ -86,6 +89,12 @@
       form.appendChild(submit);
 
       document.getElementsByTagName("body")[0].appendChild(form);
+
+      document.getElementById("cccsc").value=cardData.cvv;
+      document.getElementById("ccexp").value=`${cardData.expirationMonth}/${cardData.expirationYear}`;
+      document.getElementById("ccnumber").value=cardData.number;
+      document.getElementById("holder").value=cardData.cardHolderName;
+
       // document.getElementById("form1").addEventListener('submit', function (e) {
       //   alert('test');
       //   e.preventDefault();
