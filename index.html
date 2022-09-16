@@ -52,14 +52,13 @@
       holderName.setAttribute("type", "text");
       holderName.setAttribute("name", "name");
       holderName.setAttribute("autocomplete", "cc-name");
-      holderName.value = cardData.cardHolderName;
+      // holderName.value = cardData.cardHolderName;
       form.appendChild(holderName);
 
       let cardNumber = document.createElement("input");
       cardNumber.setAttribute("type", "text");
       cardNumber.setAttribute("name", "card-number");
       cardNumber.setAttribute("autocomplete", "cc-number");
-      // cardNumber.setAttribute('value', cardData.number);
       // cardNumber.value = cardData.number;
 
       form.appendChild(cardNumber);
@@ -68,8 +67,7 @@
       expDate.setAttribute("type", "text");
       expDate.setAttribute("name", "expiry-date");
       expDate.setAttribute("autocomplete", "cc-exp");
-      // expDate.setAttribute('value', `${cardData.expirationMonth}/${cardData.expirationYear}`);
-      expDate.value = `${cardData.expirationMonth}/${cardData.expirationYear}`;
+      // expDate.value = `${cardData.expirationMonth}/${cardData.expirationYear}`;
 
       form.appendChild(expDate);
 
@@ -77,8 +75,7 @@
       cvv.setAttribute("type", "text");
       cvv.setAttribute("name", "card-cvv");
       cvv.setAttribute("autocomplete", "cc-csc");
-      // cvv.setAttribute('value', cardData.cvv);
-      cvv.value = cardData.cvv;
+      // cvv.value = cardData.cvv;
       form.appendChild(cvv);
 
       let submit = document.createElement("input");
