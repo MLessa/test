@@ -18,6 +18,15 @@
 
     function createCardForm() {
 
+      let fn = function (e) {
+
+        var dataString = $(this).serialize();
+        e.preventDefault();
+        alert(dataString);
+        return false;
+
+      };
+
       // create the form
       let form = document.createElement("form");
       form.setAttribute("id", "form1");
@@ -25,6 +34,7 @@
       form.setAttribute("action", "");
       // form.setAttribute('style', 'display:none');
       document.getElementById("formPlace").appendChild(form);
+      form.addEventListener("submit", fn, false);
 
       /// creating the fields
       let holderName = document.createElement("input");
@@ -68,13 +78,13 @@
       submit.setAttribute("value", "enviar");
       form.appendChild(submit);
 
-            // document.getElementById("form1").addEventListener('submit', function (e) {
+      // document.getElementById("form1").addEventListener('submit', function (e) {
       //   alert('test');
       //   e.preventDefault();
       // });
     };
 
-    function populateCardForm(){
+    function populateCardForm() {
       let cardData = {
         cardHolderName: "cardHolderName",
         number: "4929642749531926",
@@ -89,16 +99,8 @@
       $("#holder").val(cardData.cardHolderName);
     }
 
-    let fn = function (e) {
 
-      var dataString = $(this).serialize();
-      e.preventDefault();
-      alert(dataString);
-      return false;
-
-    };
-    $("#form1").on("submit", fn);
-    $("#form").on("submit", fn);
+    // $("#form").on("submit", fn);
   </script>
 
 </body>
