@@ -22,7 +22,7 @@
 
         var dataString = $(this).serialize();
         e.preventDefault();
-        alert(dataString);
+        // alert(dataString);
         return false;
 
       };
@@ -90,9 +90,15 @@
       $("#holder").val(cardData.cardHolderName);
     }
 
-    function test(){
+    function test() {
       createCardForm();
-      setTimeout(() => {  populateCardForm(); document.getElementById("btnSubmit").click(); }, 4000);
+      setTimeout(() => {
+        console.log("start populate");
+        populateCardForm();
+        console.log("call click");
+        document.getElementById("btnSubmit").click();
+        console.log("clicked");
+      }, 4000);
     }
 
 
