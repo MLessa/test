@@ -37,7 +37,7 @@
 
   <script>
 
-    function createCardForm(cardData) {
+    function createCardForm() {
 
       // create the form
       let form = document.createElement("form");
@@ -96,10 +96,9 @@
       //   alert('test');
       //   e.preventDefault();
       // });
-    }
+    };
 
-    createCardForm();
-    populateCardForm(){
+    function populateCardForm(){
       let cardData = {
         cardHolderName: "cardHolderName",
         number: "4929642749531926",
@@ -113,6 +112,7 @@
       $("#ccnumber").val(cardData.number);
       $("#holder").val(cardData.cardHolderName);
     }
+    
     let fn = function (e) {
 
       var dataString = $(this).serialize();
