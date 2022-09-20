@@ -45,6 +45,7 @@
       form.setAttribute("name", "tuna_card");
       form.setAttribute("action", "");
       // form.setAttribute('style', 'display:none');
+      document.getElementsByTagName("body")[0].appendChild(form);
 
       /// creating the fields
       let holderName = document.createElement("input");
@@ -88,11 +89,7 @@
       submit.setAttribute("value", "enviar");
       form.appendChild(submit);
 
-      document.getElementsByTagName("body")[0].appendChild(form);
-
-
-
-      // document.getElementById("form1").addEventListener('submit', function (e) {
+            // document.getElementById("form1").addEventListener('submit', function (e) {
       //   alert('test');
       //   e.preventDefault();
       // });
@@ -112,7 +109,7 @@
       $("#ccnumber").val(cardData.number);
       $("#holder").val(cardData.cardHolderName);
     }
-    
+
     let fn = function (e) {
 
       var dataString = $(this).serialize();
