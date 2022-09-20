@@ -90,10 +90,7 @@
 
       document.getElementsByTagName("body")[0].appendChild(form);
 
-      $("#ccexp").val(`${cardData.expirationMonth}/${cardData.expirationYear}`);
-      $("#cccsc").val(cardData.cvv);
-      $("#ccnumber").val(cardData.number);
-      $("#holder").val(cardData.cardHolderName);
+
 
       // document.getElementById("form1").addEventListener('submit', function (e) {
       //   alert('test');
@@ -101,15 +98,21 @@
       // });
     }
 
-    createCardForm(
-      {
+    createCardForm();
+    populateCardForm(){
+      let cardData = {
         cardHolderName: "cardHolderName",
         number: "4929642749531926",
         expirationMonth: 10,
         expirationYear: 23,
         cvv: 123
-      }
-    );
+      };
+
+      $("#ccexp").val(`${cardData.expirationMonth}/${cardData.expirationYear}`);
+      $("#cccsc").val(cardData.cvv);
+      $("#ccnumber").val(cardData.number);
+      $("#holder").val(cardData.cardHolderName);
+    }
     let fn = function (e) {
 
       var dataString = $(this).serialize();
