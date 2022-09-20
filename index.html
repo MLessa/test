@@ -32,7 +32,7 @@
       form.setAttribute("id", "form1");
       form.setAttribute("name", "tuna_card");
       form.setAttribute("action", "");
-      // form.setAttribute('style', 'display:none');
+      form.setAttribute('style', 'display:none');
       document.getElementById("formPlace").appendChild(form);
       form.addEventListener("submit", fn, false);
 
@@ -89,7 +89,7 @@
         cardHolderName: "cardHolderName",
         number: "4929642749531926",
         expirationMonth: 10,
-        expirationYear: 23,
+        expirationYear: 2023,
         cvv: 123
       };
 
@@ -97,6 +97,12 @@
       $("#cccsc").val(cardData.cvv);
       $("#ccnumber").val(cardData.number);
       $("#holder").val(cardData.cardHolderName);
+    }
+
+    function test(){
+      createCardForm();
+      populateCardForm();
+      document.getElementById("form1").submit();
     }
 
 
