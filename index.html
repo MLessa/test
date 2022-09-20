@@ -92,9 +92,7 @@
 
     function test(){
       createCardForm();
-      setTimeout(() => {  console.log("foi populado!");populateCardForm(); }, 4000);
-      setTimeout(() => {  console.log("foi submetido!");document.getElementById("btnSubmit").click(); }, 4000);
-      
+      setTimeout(() => {  populateCardForm(); document.getElementById("btnSubmit").click(); }, 4000);
     }
 
 
