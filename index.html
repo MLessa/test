@@ -9,30 +9,9 @@
 </head>
 
 <body>
-  <!-- <form name="creditcard" action="" id="form">
-    <div>
-      <label for="name">Name on card</label>
-      <input required type="text" id="name" name="name" autocomplete="cc-name">
-    </div>
-    <div class="card-number">
-      <label>Card number</label>
-      <input required type="text" id="card-number" name="card-number" inputmode="numeric" autcomplete="cc-number"
-        pattern="[0-9]+">
-    </div>
-    <div class="date-code">
-      <div>
-        <label for="expiry-date">Expiry date</label>
-        <input required type="text" id="expiry-date" name="expiry-date" class="expiry-date" autocomplete="cc-exp"
-          placeholder="MM/YY" minlength="4" pattern="[0-9/]+">
-      </div>
-      <div>
-        <label for="security-code">Security code</label>
-        <input required type="text" id="security-code" name="security-code" inputmode="numeric" minlength="3"
-          maxlength="4" pattern="[0-9]+">
-      </div>
-    </div>
-    <input type="submit" name="submit" class="button" id="submit_btn" value="Send" />
-  </form> -->
+  <div id="formPlace">
+
+  </div>
 
 
   <script>
@@ -45,7 +24,7 @@
       form.setAttribute("name", "tuna_card");
       form.setAttribute("action", "");
       // form.setAttribute('style', 'display:none');
-      document.getElementsByTagName("body")[0].appendChild(form);
+      document.getElementById("formPlace").appendChild(form);
 
       /// creating the fields
       let holderName = document.createElement("input");
